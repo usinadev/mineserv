@@ -1,0 +1,73 @@
+services:
+  - type: web
+    name: minecraft-server
+    env: docker
+    plan: starter
+    region: oregon
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    
+    # Configurações de ambiente
+    envVars:
+      - key: EULA
+        value: TRUE
+      - key: TYPE
+        value: PAPER
+      - key: VERSION
+        value: 1.21
+      - key: DIFFICULTY
+        value: normal
+      - key: MAX_PLAYERS
+        value: 20
+      - key: PVP
+        value: true
+      - key: ALLOW_NETHER
+        value: true
+      - key: SPAWN_PROTECTION
+        value: 0
+      - key: ONLINE_MODE
+        value: false
+      - key: LEVEL_TYPE
+        value: minecraft:normal
+      - key: GENERATE_STRUCTURES
+        value: true
+      - key: MEMORY
+        value: 2G
+      - key: MAX_MEMORY
+        value: 4G
+      - key: ENABLE_RCON
+        value: true
+      - key: RCON_PORT
+        value: 25575
+      - key: RCON_PASSWORD
+        generateValue: true
+    
+    # Configurações de rede
+    numInstances: 1
+    
+    # Portas expostas
+    ports:
+      - port: 25565
+        protocol: tcp
+      - port: 25565
+        protocol: udp
+      - port: 25575
+        protocol: tcp
+    
+    # Configurações de disco persistente
+    disk:
+      name: minecraft-data
+      mountPath: /data
+      sizeGB: 10
+    
+    # Configurações de health check
+    healthCheckPath: /
+    
+    # Timeout de build
+    buildTimeout: 600
+
+# Se você precisar de mais armazenamento, pode usar um disco persistente separado
+disk:
+  name: minecraft-persistent-storage
+  mountPath: /data
+  sizeGB: 20

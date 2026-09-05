@@ -1,0 +1,35 @@
+# Docker
+docker-compose.override.yml
+
+# Dados do servidor
+world/
+world_nether/
+world_the_end/
+logs/
+crash-reports/
+server-icon.png
+banned-ips.json
+banned-players.json
+ops.json
+whitelist.json
+usercache.json
+*.dat
+*.dat_old
+
+# Configurações locais
+.env
+.env.local
+
+# Sistemas operacionais
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Backup
+backups/

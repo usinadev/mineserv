@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  minecraft:
+    build: .
+    container_name: minecraft-server
+    ports:
+      - "25565:25565"
+      - "25575:25575"
+    environment:
+      - EULA=TRUE
+      - TYPE=PAPER
+      - VERSION=1.21
+      - DIFFICULTY=normal
+      - MAX_PLAYERS=20
+      - PVP=true
+      - ALLOW_NETHER=true
+      - SPAWN_PROTECTION=0
+      - ONLINE_MODE=false
+      - LEVEL_TYPE=minecraft:normal
+      - GENERATE_STRUCTURES=true
+      - MEMORY=2G
+      - MAX_MEMORY=4G
+      - ENABLE_RCON=true
+      - RCON_PORT=25575
+      - RCON_PASSWORD=changeme
+    volumes:
+      - minecraft-data:/data
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+
+volumes:
+  minecraft-data:
+    driver: local
