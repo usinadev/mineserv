@@ -48,7 +48,9 @@ Configure estas variáveis na seção "Environment Variables":
 ```env
 EULA=TRUE
 TYPE=PAPER
-VERSION=1.21
+VERSION=26.2
+PAPER_CHANNEL=default
+SKIP_DOWNLOAD_DEFAULTS=true
 DIFFICULTY=normal
 MAX_PLAYERS=20
 PVP=true

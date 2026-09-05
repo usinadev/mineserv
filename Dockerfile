@@ -1,9 +1,11 @@
-FROM itzg/minecraft-server:java21
+FROM itzg/minecraft-server:java25
 
 # Configurações do servidor
 ENV EULA=TRUE
 ENV TYPE=PAPER
-ENV VERSION=1.21
+ENV VERSION=26.2
+ENV PAPER_CHANNEL=default
+ENV SKIP_DOWNLOAD_DEFAULTS=true
 ENV DIFFICULTY=normal
 ENV MAX_PLAYERS=20
 ENV PVP=true

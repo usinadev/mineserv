@@ -9,4 +9,4 @@ echo "Porta: 25565"
 echo "===================================="
 
 # Executar o script original da imagem itzg/minecraft-server
-exec /start-configuration
+exec /start

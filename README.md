@@ -59,7 +59,9 @@ docker-compose logs -f minecraft
 |----------|-----------|--------|
 | `EULA` | Aceitação do EULA do Minecraft | `TRUE` |
 | `TYPE` | Tipo de servidor (VANILLA, PAPER, etc) | `PAPER` |
-| `VERSION` | Versão do Minecraft | `1.21` |
+| `VERSION` | Versão do Minecraft | `26.2` |
+| `PAPER_CHANNEL` | Canal do Paper (default/experimental) | `default` |
+| `SKIP_DOWNLOAD_DEFAULTS` | Pular download de configs padrão | `true` |
 | `DIFFICULTY` | Dificuldade (peaceful, easy, normal, hard) | `normal` |
 | `MAX_PLAYERS` | Número máximo de jogadores | `20` |
 | `MEMORY` | Memória mínima alocada | `2G` |
@@ -100,7 +102,9 @@ Configure estas variáveis no painel do Render:
 ```
 EULA=TRUE
 TYPE=PAPER
-VERSION=1.21
+VERSION=26.2
+PAPER_CHANNEL=default
+SKIP_DOWNLOAD_DEFAULTS=true
 DIFFICULTY=normal
 MAX_PLAYERS=20
 MEMORY=2G

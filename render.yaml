@@ -14,7 +14,11 @@ services:
       - key: TYPE
         value: PAPER
       - key: VERSION
-        value: 1.21
+        value: 26.2
+      - key: PAPER_CHANNEL
+        value: default
+      - key: SKIP_DOWNLOAD_DEFAULTS
+        value: true
       - key: DIFFICULTY
         value: normal
       - key: MAX_PLAYERS
